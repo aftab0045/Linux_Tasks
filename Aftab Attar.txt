@@ -1,0 +1,127 @@
+[ec2-user@ip-172-31-35-72 ~]$ ls
+Bharat  Bollywood  Cricket  Files  Task1  Task10  Task2  Task3  Task4  Task5  Task6  Task7  Task8  Task9
+[ec2-user@ip-172-31-35-72 ~]$ # Task 1
+[ec2-user@ip-172-31-35-72 ~]$ mkdir school
+[ec2-user@ip-172-31-35-72 ~]$ cd school/
+[ec2-user@ip-172-31-35-72 school]$ mkdir students teachers staff
+[ec2-user@ip-172-31-35-72 school]$ ls
+staff  students  teachers
+[ec2-user@ip-172-31-35-72 school]$ cd students/
+[ec2-user@ip-172-31-35-72 students]$ touch student1.txt student2.txt student3.txt
+[ec2-user@ip-172-31-35-72 students]$ ls
+student1.txt  student2.txt  student3.txt
+[ec2-user@ip-172-31-35-72 students]$ mv student3.txt ../teachers/
+[ec2-user@ip-172-31-35-72 students]$ ls
+student1.txt  student2.txt
+[ec2-user@ip-172-31-35-72 students]$ mv student2.txt class10_student.txt
+[ec2-user@ip-172-31-35-72 students]$ ls
+class10_student.txt  student1.txt
+[ec2-user@ip-172-31-35-72 students]$ cd ..
+[ec2-user@ip-172-31-35-72 school]$ rmdir staff
+[ec2-user@ip-172-31-35-72 school]$ ls
+students  teachers
+[ec2-user@ip-172-31-35-72 school]$ ls -R
+.:
+students  teachers
+
+./students:
+class10_student.txt  student1.txt
+
+./teachers:
+student3.txt
+[ec2-user@ip-172-31-35-72 school]$ cd ..
+[ec2-user@ip-172-31-35-72 ~]$
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task2
+[ec2-user@ip-172-31-35-72 ~]$ mkdir project
+[ec2-user@ip-172-31-35-72 ~]$ cd project/
+[ec2-user@ip-172-31-35-72 project]$ mkdir src bin docs
+[ec2-user@ip-172-31-35-72 project]$ cd docs/
+[ec2-user@ip-172-31-35-72 docs]$ cd ../src
+[ec2-user@ip-172-31-35-72 src]$ cd ~
+[ec2-user@ip-172-31-35-72 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-35-72 ~]$ ls -a
+.   .bash_history  .bash_profile  .ssh    Bollywood  Files  Task10  Task3  Task5  Task7  Task9    school
+..  .bash_logout   .bashrc        Bharat  Cricket    Task1  Task2   Task4  Task6  Task8  project
+[ec2-user@ip-172-31-35-72 ~]$
+[ec2-user@ip-172-31-35-72 ~]$
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task 3
+[ec2-user@ip-172-31-35-72 ~]$ nano notes.txt
+[ec2-user@ip-172-31-35-72 ~]$ cat notes.txt
+Hii
+this is task 3
+byeee
+[ec2-user@ip-172-31-35-72 ~]$ echo Linux is powerful >> notes.txt
+[ec2-user@ip-172-31-35-72 ~]$ cat notes.txt
+Hii
+this is task 3
+byeee
+Linux is powerful
+[ec2-user@ip-172-31-35-72 ~]$ head -n 2 notes.txt
+Hii
+this is task 3
+[ec2-user@ip-172-31-35-72 ~]$ tail -n 1 notes.txt
+Linux is powerful
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task 4
+[ec2-user@ip-172-31-35-72 ~]$ mkdir backup
+[ec2-user@ip-172-31-35-72 ~]$ cp /project/docs/*.txt /backup
+cp: cannot stat '/project/docs/*.txt': No such file or directory
+[ec2-user@ip-172-31-35-72 ~]$ sudo mv /var/log/*.log /home/ec2-user/backup/
+[ec2-user@ip-172-31-35-72 ~]$ rm /backup/*
+rm: cannot remove '/backup/*': No such file or directory
+[ec2-user@ip-172-31-35-72 ~]$ rm -f /backup/*
+[ec2-user@ip-172-31-35-72 ~]$ touch /home/ec2-user/backup/folder.5
+[ec2-user@ip-172-31-35-72 ~]$ cd backup/
+[ec2-user@ip-172-31-35-72 backup]$ ls
+cloud-init-output.log  cloud-init.log  dnf.librepo.log  dnf.log  dnf.rpm.log  folder.5  hawkey.log
+[ec2-user@ip-172-31-35-72 backup]$ cd ..
+[ec2-user@ip-172-31-35-72 ~]$ rm -r project
+[ec2-user@ip-172-31-35-72 ~]$ ls
+Bharat  Bollywood  Cricket  Files  Task1  Task10  Task2  Task3  Task4  Task5  Task6  Task7  Task8  Task9  backup  notes.txt  school
+[ec2-user@ip-172-31-35-72 ~]$
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task5
+[ec2-user@ip-172-31-35-72 ~]$ date
+Mon Sep 22 04:06:04 UTC 2025
+[ec2-user@ip-172-31-35-72 ~]$ cal
+   September 2025
+Su Mo Tu We Th Fr Sa
+    1  2  3  4  5  6
+ 7  8  9 10 11 12 13
+14 15 16 17 18 19 20
+21 22 23 24 25 26 27
+28 29 30
+
+[ec2-user@ip-172-31-35-72 ~]$ whoami
+ec2-user
+[ec2-user@ip-172-31-35-72 ~]$ echo $SHELL
+/bin/bash
+[ec2-user@ip-172-31-35-72 ~]$ uname -a
+Linux ip-172-31-35-72.ap-south-1.compute.internal 6.1.147-172.266.amzn2023.x86_64 #1 SMP PREEMPT_DYNAMIC Thu Aug  7 19:30:40 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+[ec2-user@ip-172-31-35-72 ~]$
+
+
+[ec2-user@ip-172-31-35-72 ~]$ #Task 6
+[ec2-user@ip-172-31-35-72 ~]$ mkdir company
+[ec2-user@ip-172-31-35-72 ~]$ cd company/
+[ec2-user@ip-172-31-35-72 company]$ mkdir dev test prod
+[ec2-user@ip-172-31-35-72 company]$ cd dev/
+[ec2-user@ip-172-31-35-72 dev]$ touch app.py readme.txt
+[ec2-user@ip-172-31-35-72 dev]$ cp readme.txt ../dev
+cp: 'readme.txt' and '../dev/readme.txt' are the same file
+[ec2-user@ip-172-31-35-72 dev]$ cp readme.txt ../test
+[ec2-user@ip-172-31-35-72 dev]$ mv app.py ../prod
+[ec2-user@ip-172-31-35-72 dev]$ ls
+readme.txt
+[ec2-user@ip-172-31-35-72 dev]$ cd ..
+[ec2-user@ip-172-31-35-72 company]$ rm -r test
+[ec2-user@ip-172-31-35-72 company]$ ls
+dev  prod
+[ec2-user@ip-172-31-35-72 company]$

@@ -1,0 +1,295 @@
+[ec2-user@ip-172-31-35-72 ~]$ #Task 1
+[ec2-user@ip-172-31-35-72 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-35-72 ~]$ mkdir project
+[ec2-user@ip-172-31-35-72 ~]$ ls
+ Bharat     'ChatGpt Challenge'   Files   Task10   Task3   Task5   Task7   Task9    company     project
+ Bollywood   Cricket              Task1   Task2    Task4   Task6   Task8   backup   notes.txt   school
+[ec2-user@ip-172-31-35-72 ~]$ cd project/
+[ec2-user@ip-172-31-35-72 project]$ touch app.txt db.txt log.txt
+[ec2-user@ip-172-31-35-72 project]$ ls -a
+.  ..  app.txt  db.txt  log.txt
+[ec2-user@ip-172-31-35-72 project]$ ls -la
+total 16
+drwxr-xr-x.  2 ec2-user ec2-user    50 Sep 23 02:44 .
+drwx------. 22 ec2-user ec2-user 16384 Sep 23 02:43 ..
+-rw-r--r--.  1 ec2-user ec2-user     0 Sep 23 02:44 app.txt
+-rw-r--r--.  1 ec2-user ec2-user     0 Sep 23 02:44 db.txt
+-rw-r--r--.  1 ec2-user ec2-user     0 Sep 23 02:44 log.txt
+[ec2-user@ip-172-31-35-72 project]$ date
+Tue Sep 23 02:44:52 UTC 2025
+[ec2-user@ip-172-31-35-72 project]$ who
+ec2-user pts/0        2025-09-23 02:38 (106.192.124.86)
+[ec2-user@ip-172-31-35-72 project]$
+[ec2-user@ip-172-31-35-72 project]$
+
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task 2
+[ec2-user@ip-172-31-35-72 ~]$ cd project/
+[ec2-user@ip-172-31-35-72 project]$ ls
+app.txt  db.txt  log.txt
+[ec2-user@ip-172-31-35-72 project]$ cp app.txt /tmp
+[ec2-user@ip-172-31-35-72 project]$ cd
+[ec2-user@ip-172-31-35-72 ~]$ cd ../..
+[ec2-user@ip-172-31-35-72 /]$ cd tmp
+[ec2-user@ip-172-31-35-72 tmp]$ ls
+app.txt
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-chronyd.service-VFpRP1
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-dbus-broker.service-B2VQWz
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-policy-routes@ens5.service-uHZFdL
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-systemd-logind.service-OqVk6R
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-systemd-resolved.service-3e4bsd
+[ec2-user@ip-172-31-35-72 tmp]$ mv app.txt app_backup.txt
+[ec2-user@ip-172-31-35-72 tmp]$ ls
+app_backup.txt
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-chronyd.service-VFpRP1
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-dbus-broker.service-B2VQWz
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-policy-routes@ens5.service-uHZFdL
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-systemd-logind.service-OqVk6R
+systemd-private-83ed47df2f2743109d4c4cd1f3aea37a-systemd-resolved.service-3e4bsd
+[ec2-user@ip-172-31-35-72 tmp]$ cd ..
+[ec2-user@ip-172-31-35-72 /]$ cd ~
+[ec2-user@ip-172-31-35-72 ~]$ mv project/db.txt /var/tmp
+[ec2-user@ip-172-31-35-72 ~]$ cd project/
+[ec2-user@ip-172-31-35-72 project]$ ls
+app.txt  log.txt
+[ec2-user@ip-172-31-35-72 project]$ rm log.txt
+[ec2-user@ip-172-31-35-72 project]$ ls
+app.txt
+[ec2-user@ip-172-31-35-72 project]$ touch notes.txt   
+[ec2-user@ip-172-31-35-72 project]$ cat > notes.txt
+Hello
+I'm Aftab Attar
+How are you
+AWS
+byy
+[ec2-user@ip-172-31-35-72 project]$ head -n 3 notes.txt
+Hello
+I'm Aftab Attar
+How are you
+
+
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task3
+[ec2-user@ip-172-31-35-72 ~]$ sudo adduser devuser
+[ec2-user@ip-172-31-35-72 ~]$ sudo chown devuser app.txt
+chown: cannot access 'app.txt': No such file or directory
+[ec2-user@ip-172-31-35-72 ~]$ sudo chown devuser project/app.txt
+[ec2-user@ip-172-31-35-72 ~]$ sudo chgrp wheel project/notes.txt
+[ec2-user@ip-172-31-35-72 ~]$ chmod 744 project/app.txt
+chmod: changing permissions of 'project/app.txt': Operation not permitted
+[ec2-user@ip-172-31-35-72 ~]$ cd project/
+[ec2-user@ip-172-31-35-72 project]$ chmod 744 app.txt
+chmod: changing permissions of 'app.txt': Operation not permitted
+[ec2-user@ip-172-31-35-72 project]$ sudo chmod 744 app.txt
+[ec2-user@ip-172-31-35-72 project]$ ls -l
+total 4
+-rwxr--r--. 1 devuser  ec2-user  0 Sep 23 02:44 app.txt
+-rw-r--r--. 1 ec2-user wheel    42 Sep 23 02:54 notes.txt
+[ec2-user@ip-172-31-35-72 project]$
+
+
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task 4
+[ec2-user@ip-172-31-35-72 ~]$ sudo adduser student1
+[ec2-user@ip-172-31-35-72 ~]$ sudo adduser student2
+[ec2-user@ip-172-31-35-72 ~]$ sudo addgroup projectgrp
+sudo: addgroup: command not found
+[ec2-user@ip-172-31-35-72 ~]$ sudo groupadd projectgrp
+[ec2-user@ip-172-31-35-72 ~]$ sudo passwod student1
+sudo: passwod: command not found
+[ec2-user@ip-172-31-35-72 ~]$ sudo usermod -aG projectgrp student1
+[ec2-user@ip-172-31-35-72 ~]$ sudo usermod -aG projectgrp student2
+[ec2-user@ip-172-31-35-72 ~]$ sudo passwd student1
+Changing password for user student1.
+New password:
+BAD PASSWORD: The password contains the user name in some form
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[ec2-user@ip-172-31-35-72 ~]$ sudo passwd student2
+Changing password for user student2.
+New password:
+BAD PASSWORD: The password contains the user name in some form
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[ec2-user@ip-172-31-35-72 ~]$ sudo usermod -L student2
+[ec2-user@ip-172-31-35-72 ~]$ lastlog
+Username         Port     From                                       Latest
+root                                                                **Never logged in**
+bin                                                                 **Never logged in**
+daemon                                                              **Never logged in**
+adm                                                                 **Never logged in**
+lp                                                                  **Never logged in**
+sync                                                                **Never logged in**
+shutdown                                                            **Never logged in**
+halt                                                                **Never logged in**
+mail                                                                **Never logged in**
+operator                                                            **Never logged in**
+games                                                               **Never logged in**
+ftp                                                                 **Never logged in**
+nobody                                                              **Never logged in**
+dbus                                                                **Never logged in**
+systemd-network                                                     **Never logged in**
+systemd-oom                                                         **Never logged in**
+systemd-resolve                                                     **Never logged in**
+sshd                                                                **Never logged in**
+rpc                                                                 **Never logged in**
+libstoragemgmt                                                      **Never logged in**
+systemd-coredump                                                    **Never logged in**
+systemd-timesync                                                    **Never logged in**
+chrony                                                              **Never logged in**
+ec2-instance-connect                                                    **Never logged in**
+stapunpriv                                                          **Never logged in**
+rpcuser                                                             **Never logged in**
+tcpdump                                                             **Never logged in**
+ec2-user         pts/0    106.192.124.86                            Tue Sep 23 02:38:55 +0000 2025
+aftab                                                               **Never logged in**
+sonu             pts/0                                              Sun Sep 21 04:08:52 +0000 2025
+apache                                                              **Never logged in**
+devuser                                                             **Never logged in**
+student1                                                            **Never logged in**
+student2                                                            **Never logged in**
+[ec2-user@ip-172-31-35-72 ~]$
+[ec2-user@ip-172-31-35-72 ~]$
+
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task 5
+[ec2-user@ip-172-31-35-72 ~]$ find /home -type f -name "*.txt"
+/home/ec2-user/Files/My.txt
+/home/ec2-user/Task2/dir1/dir2/file1.txt
+/home/ec2-user/Task2/dir1/dir2/file2.txt
+/home/ec2-user/Task2/dir1/dir2/final.txt
+/home/ec2-user/Task2/test/file1.txt
+/home/ec2-user/Task2/test/file2.txt
+[ec2-user@ip-172-31-35-72 ~]$ find /home -type d -name "backup"
+/home/ec2-user/Task5/backup
+/home/ec2-user/backup
+find: ‘/home/sonu’: Permission denied
+find: ‘/home/devuser’: Permission denied
+find: ‘/home/student1’: Permission denied
+[ec2-user@ip-172-31-35-72 ~]$ find /var/log -type f -size +5M
+/var/log/journal/ec297b848c8061530649ab4a163a096f/system.journal
+/var/log/journal/ec297b848c8061530649ab4a163a096f/user-1000.journal
+/var/log/journal/ec297b848c8061530649ab4a163a096f/user-1001.journal
+/var/log/journal/ec297b848c8061530649ab4a163a096f/user-1002.journal
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/sssd’: Permission denied
+[ec2-user@ip-172-31-35-72 ~]$ find /home -type f -mtime -1
+/home/ec2-user/.bash_history
+/home/ec2-user/school/students/student1.txt
+/home/ec2-user/school/students/class10_student.txt
+/home/ec2-user/school/teachers/student3.txt
+[ec2-user@ip-172-31-35-72 ~]$ find /etc -type f -name ".*"
+/etc/skel/.bash_logout
+/etc/skel/.bash_profile
+/etc/skel/.bashrc
+
+
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task 6
+[ec2-user@ip-172-31-35-72 ~]$ grep "root" /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+[ec2-user@ip-172-31-35-72 ~]$ grep -i "error" /var/log/messages
+grep: /var/log/messages: No such file or directory
+[ec2-user@ip-172-31-35-72 ~]$ grep -c "user" /etc/passwd
+5
+[ec2-user@ip-172-31-35-72 ~]$ grep -r "password" /etc
+grep: /etc/sysconfig/sshd: Permission denied
+/etc/cloud/cloud.cfg: - set-passwords
+/etc/pki/tls/openssl.cnf:# input_password = secret
+/etc/pki/tls/openssl.cnf:# output_password = secret
+[ec2-user@ip-172-31-35-72 ~]$ grep -n "nologin" /etc/passwd
+2:bin:x:1:1:bin:/bin:/sbin/nologin
+3:daemon:x:2:2:daemon:/sbin:/sbin/nologin
+4:adm:x:3:4:adm:/var/adm:/sbin/nologin
+5:lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+9:mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+10:operator:x:11:0:operator:/root:/sbin/nologin
+11:games:x:12:100:games:/usr/games:/sbin/nologin
+12:ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+13:nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+14:dbus:x:81:81:System message bus:/:/sbin/nologin
+15:systemd-network:x:192:192:systemd Network Management:/:/usr/sbin/nologin
+16:systemd-oom:x:999:999:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+17:systemd-resolve:x:193:193:systemd Resolver:/:/usr/sbin/nologin
+18:sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+19:rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+20:libstoragemgmt:x:997:997:daemon account for libstoragemgmt:/:/usr/sbin/nologin
+21:systemd-coredump:x:996:996:systemd Core Dumper:/:/usr/sbin/nologin
+22:systemd-timesync:x:995:995:systemd Time Synchronization:/:/usr/sbin/nologin
+23:chrony:x:994:994:chrony system user:/var/lib/chrony:/sbin/nologin
+24:ec2-instance-connect:x:993:993::/home/ec2-instance-connect:/sbin/nologin
+25:stapunpriv:x:159:159:systemtap unprivileged user:/var/lib/stapunpriv:/sbin/nologin
+26:rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+27:tcpdump:x:72:72::/:/sbin/nologin
+
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task 7
+[ec2-user@ip-172-31-35-72 ~]$ sed -i 's/app/application/g' app.txt
+sed: can't read app.txt: No such file or directory
+[ec2-user@ip-172-31-35-72 ~]$ sed -i 's/app/application/g' project/app.txt
+[ec2-user@ip-172-31-35-72 ~]$ sed -i '1d' project/notes.txt
+[ec2-user@ip-172-31-35-72 ~]$ sed -n '2,4p' project/notes.txt
+How are you
+AWS
+byy
+[ec2-user@ip-172-31-35-72 ~]$ echo "End of File" >> app.txt
+[ec2-user@ip-172-31-35-72 ~]$ sed -i '/^$/d' notes.txt
+[ec2-user@ip-172-31-35-72 ~]$ cat app.txt
+End of File
+[ec2-user@ip-172-31-35-72 ~]$ cat notes.txt
+Hii
+this is task 3
+byeee
+Linux is powerful
+[ec2-user@ip-172-31-35-72 ~]$
+
+
+
+
+
+[ec2-user@ip-172-31-35-72 ~]$ # Task 8
+[ec2-user@ip-172-31-35-72 ~]$ head -n 5 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+[ec2-user@ip-172-31-35-72 ~]$ tail -n 10 /var/log/messages
+tail: cannot open '/var/log/messages' for reading: No such file or directory
+[ec2-user@ip-172-31-35-72 ~]$ cd ../..
+[ec2-user@ip-172-31-35-72 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[ec2-user@ip-172-31-35-72 /]$ cd var
+[ec2-user@ip-172-31-35-72 var]$ ls
+account  cache  empty  games     lib    lock  mail  opt       run    tmp  yp
+adm      db     ftp    kerberos  local  log   nis   preserve  spool  www
+[ec2-user@ip-172-31-35-72 var]$ cd log
+[ec2-user@ip-172-31-35-72 log]$ ls
+README  btmp                   cloud-init.log   dnf.rpm.log          httpd    private  tallylog
+amazon  chrony                 dnf.librepo.log  hawkey.log           journal  sa       wtmp
+audit   cloud-init-output.log  dnf.log          hawkey.log-20250921  lastlog  sssd
+[ec2-user@ip-172-31-35-72 log]$ cd ~
+[ec2-user@ip-172-31-35-72 ~]$ head -n 10 notes.txt | tail -n 6
+Hii
+this is task 3
+byeee
+Linux is powerful
+[ec2-user@ip-172-31-35-72 ~]$ stat notes.txt
+  File: notes.txt
+  Size: 43              Blocks: 8          IO Block: 4096   regular file
+Device: 10301h/66305d   Inode: 8537783     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/ec2-user)   Gid: ( 1000/ec2-user)
+Context: unconfined_u:object_r:user_home_t:s0
+Access: 2025-09-23 03:36:35.039685996 +0000
+Modify: 2025-09-23 03:36:35.039685996 +0000
+Change: 2025-09-23 03:36:35.039685996 +0000
+ Birth: 2025-09-23 03:36:35.039685996 +0000
+[ec2-user@ip-172-31-35-72 ~]$
