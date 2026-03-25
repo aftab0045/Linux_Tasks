@@ -19,8 +19,5 @@ I have completed around 20 Linux tasks covering:
 
 This repository serves as a **personal backup** and reference for Linux command-line practice.
 
-## Author
 
-**Aftab Attar**  
-Email: aftabattar04@gmail.com
 
